@@ -239,7 +239,7 @@ class Reactive extends Signal {
 /**
  * Returns a writable Signal that side-effects whenever its value gets updated.
  * @template T
- * @type {<T>(initialValue: T, options?: { equals?: Equals }) => Signal<T> & Pick<Reactive<T>, 'peek'>}
+ * @type {<T>(initialValue: T, options?: { equals?: Equals }) => Omit<Reactive<T>, '_'|'s'|'c'>}
  */
 export const signal = (value, options = defaults) => new Reactive(value, options);
 
